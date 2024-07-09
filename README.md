@@ -1,6 +1,6 @@
 # ReactFormGuard 📁
 
-React form guard is dirty
+Hook and component to validate if user can leave a route with form invalid
 
 - This project was generated with [Vite](https://vitejs.dev/guide/) version 5.3.1
 ```bash

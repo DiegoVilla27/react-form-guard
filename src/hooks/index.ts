@@ -9,16 +9,15 @@ export interface IForm {
   email: string;
   password: string;
   passwordConfirm: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  image: any;
 }
 
 const useApp = () => {
   const {
+    reset,
     watch,
     register,
     handleSubmit,
-    formState: { errors, isValid }
+    formState: { errors, isValid, isDirty }
   } = useForm<IForm>({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     resolver: yupResolver(validations) as any,
@@ -28,7 +27,7 @@ const useApp = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = async (_value: IForm) => {
-    //cleanForm();
+    reset();
   };
 
   useEffect(() => {
@@ -38,6 +37,8 @@ const useApp = () => {
   }, [watch]);
 
   return {
+    reset,
+    isDirty,
     isValid,
     register,
     errors,

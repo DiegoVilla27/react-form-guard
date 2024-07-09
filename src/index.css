@@ -57,3 +57,30 @@ form {
   color: red;
   font-size: 0.8rem;
 }
+
+.navbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  li {
+    flex: 1;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #8b5cf6;
+    color: #8b5cf6;
+    background-color: transparent;
+    cursor: pointer;
+    a {
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+    }
+  }
+}
+
+.active {
+  background-color: #8b5cf6 !important;
+  color: white !important;
+}
